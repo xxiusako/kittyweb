@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>我的小小房間</title>
+    <style>
+        body {
+            background-color: #FFF8F0;
+            color: #333;
+            font-family: "微軟正黑體", "Arial", sans-serif;
+            background-image: 
+                linear-gradient(45deg, #ffeef5 25%, transparent 25%), 
+                linear-gradient(-45deg, #ffeef5 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #ffeef5 75%), 
+                linear-gradient(-45deg, transparent 75%, #ffeef5 75%);
+            background-size: 20px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: "Comic Sans MS", cursive;
+            font-size: 36px;
+            color: #FF6699;
+            margin-top: 30px;
+            text-shadow: 1px 1px #FFDDEE;
+        }
+
+        .box {
+            border: 2px dashed #FFCCCC;
+            padding: 30px;
+            margin: 30px auto;
+            width: 400px;
+            background-color: #FFFFFFDD;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        a {
+            color: #FF6699;
+            text-decoration: none;
+            border-bottom: 1px dashed #FF99CC;
+        }
+
+        a:hover {
+            color: #FF3366;
+        }
+
+        .profile {
+            text-align: left;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin-top: 20px;
+            background-color: #FF99CC;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: "微軟正黑體";
+        }
+
+        .button:hover {
+            background-color: #FF6699;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">♡ My Sweet Room ♡</div>
+
+    <div class="box" id="home">
+        <h1>歡迎來到我的小小房間</h1>
+        <p>這裡是愛貓派ฅ^•ﻌ•^ฅ的秘密基地</p>
+
+        <div class="profile">
+            <h3>About Me</h3>
+            <p>暱稱：某某</p>
+            <p>興趣：拍照 / 收藏貓咪小物 / 看日雜</p>
+            <p>近期狀態：在打造復古個人網站！</p>
+        </div>
+
+        <button class="button" onclick="showSecret()">進入秘密房間</button>
+
+        <h3>留言板</h3>
+        <p>♡ 歡迎留言聊聊天 ♡</p>
+        <p>（這裡是假留言板！）</p>
+    </div>
+
+    <div class="box hidden" id="secret">
+        <h1>這裡是秘密房間！</h1>
+        <p>謝謝你點進來～</p>
+        <p>今天的秘密是：<br>
+        <span style="color:#FF6699;">（………………）</span>
+        </p>
+        <p><a href="#" onclick="backHome()">← 回首頁</a></p>
+    </div>
+
+    <script>
+        function showSecret() {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('secret').classList.remove('hidden');
+        }
+        function backHome() {
+            document.getElementById('secret').classList.add('hidden');
+            document.getElementById('home').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
